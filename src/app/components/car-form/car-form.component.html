@@ -1,0 +1,21 @@
+<div class="p-5">
+    <form #f="ngForm" (ngSubmit)="f.form.valid ? saveCar() : showErrorMessages()">
+        <label for="plate" class="form-label">Car Plate:</label>
+        <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="carModel.plate" required>
+
+        <label for="color" class="form-label">Color:</label>
+        <input id="color" name="color" type="text" class="form-control" [(ngModel)]="carModel.color" required>
+
+        <label for="model" class="form-label">Model:</label>
+        <input id="model" name="model" type="text" class="form-control" [(ngModel)]="carModel.carModel" required>
+
+        <label for="chasis" class="form-label">Chasis:</label>
+        <input id="chasis" name="chasis" type="text" class="form-control" [(ngModel)]="carModel.chasis" required>
+
+        <label for="year" class="form-label">Year:</label>
+        <input id="year" name="year" type="number" class="form-control" [(ngModel)]="carModel.year" required>
+
+        <button type="submit" class="btn btn-dark mt-4" [disabled]="!f.form.valid">Create</button>
+    </form>
+    <app-custom-modal [title]="modalTitle" [icon]="icon" (toogleModalParent)="toggleModal($event)" [showModal]="showModal"></app-custom-modal>
+</div>

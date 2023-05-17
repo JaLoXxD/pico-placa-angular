@@ -10,6 +10,8 @@ import { PicoPlacaTableComponent } from './components/pico-placa-table/pico-plac
 import { CustomH1Component } from './shared/custom-h1/custom-h1.component';
 import { CustomModalComponent } from './shared/custom-modal/custom-modal.component';
 import { CloseModalDirective } from './shared/directives/close-modal.directive';
+import { CarsTableComponent } from './components/cars-table/cars-table.component';
+import { CirculationFormComponent } from './components/circulation-form/circulation-form.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CloseModalDirective } from './shared/directives/close-modal.directive';
     CustomH1Component,
     CustomModalComponent,
     CloseModalDirective,
+    CarsTableComponent,
+    CirculationFormComponent,
   ],
   imports: [
     BrowserModule,
