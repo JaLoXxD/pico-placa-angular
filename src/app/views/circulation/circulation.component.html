@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-6">
+        <app-cars-table (onSelectCar)="setCar($event)"></app-cars-table>
+        <app-pico-placa-table></app-pico-placa-table>
+    </div>
+    <div class="col-6">
+        <!-- <app-car-form></app-car-form> -->
+        <app-circulation-form [currentCar]="currentCar"></app-circulation-form>
+    </div>
+</div>
