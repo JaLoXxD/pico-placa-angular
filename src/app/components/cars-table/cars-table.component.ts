@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CarModel } from "src/app/models";
 import { PicoPlacaService } from "src/app/services/pico-placa.service";
 
@@ -8,6 +8,7 @@ import { PicoPlacaService } from "src/app/services/pico-placa.service";
   styleUrls: ['./cars-table.component.sass']
 })
 export class CarsTableComponent {
+  @Output() onSelectCar = new EventEmitter<CarModel>();
   cars: CarModel[]
 
   constructor(private _picoPlacaService: PicoPlacaService){}
@@ -21,5 +22,10 @@ export class CarsTableComponent {
       console.log(resp);
       this.cars = resp.cars;
     })
+  }
+
+  setCar(car: CarModel){
+    console.log(car)
+    this.onSelectCar.emit(car);
   }
 }
