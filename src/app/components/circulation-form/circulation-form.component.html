@@ -1,0 +1,8 @@
+<div class="pt-5">
+    <form #f="ngForm" (ngSubmit)="f.form.valid ? checkCirculation() : setError()">
+        <label for="plate" class="form-label">Car Plate:</label>
+        <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="checkCirculationModel.plate" pattern="^[A-Z]{3}-\d{3,4}?$" required>
+
+        <button type="submit" class="btn btn-dark mt-4" [disabled]="!f.form.valid">Check Circulation</button>
+    </form>
+</div>
