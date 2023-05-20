@@ -1,0 +1,27 @@
+@import "../../variables.sass"
+a
+    color: $principalColor
+    font-size: 20px
+    text-decoration: none
+    position: relative
+    &::before
+        content: ""
+        display: block
+        position: absolute
+        bottom: 0
+        width: 0
+        height: 3px
+        border-radius: 25px
+        margin: 0 auto
+        left: 0
+        right: 0
+        background-color: $secondaryColor
+        transition: all .3s ease-in-out
+    &:hover
+        &::before
+            width: 100%
+    
+
+a.active
+    &::before
+        width: 100%

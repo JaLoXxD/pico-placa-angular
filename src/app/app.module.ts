@@ -12,6 +12,9 @@ import { CustomModalComponent } from './shared/custom-modal/custom-modal.compone
 import { CloseModalDirective } from './shared/directives/close-modal.directive';
 import { CarsTableComponent } from './components/cars-table/cars-table.component';
 import { CirculationFormComponent } from './components/circulation-form/circulation-form.component';
+import { CreateCarComponent } from './views/create-car/create-car.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CirculationComponent } from './views/circulation/circulation.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { CirculationFormComponent } from './components/circulation-form/circulat
     CloseModalDirective,
     CarsTableComponent,
     CirculationFormComponent,
+    CreateCarComponent,
+    NavbarComponent,
+    CirculationComponent,
   ],
   imports: [
     BrowserModule,
