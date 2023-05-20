@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { environment } from '../../environments/environment.development';
-import { CarModel, CarsListModel, SaveCarModel } from '../models';
+import { CarModel, CarsListModel, CheckCirculationModel, CheckCirculationResponseModel, SaveCarModel } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class PicoPlacaService {
 
   getAllCars(): Observable<CarsListModel>{
     return this._http.get<CarsListModel>(`${environment.apiUrl}/cars`);
+  }
+
+  checkCirculation(body: CheckCirculationModel): Observable<CheckCirculationResponseModel>{
+    return this._http.post<CheckCirculationResponseModel>(`${environment.apiUrl}/checkCar`, body);
   }
 }
