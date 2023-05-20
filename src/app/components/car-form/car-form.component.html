@@ -1,5 +1,5 @@
 <div class="p-5">
-    <form #f="ngForm" (ngSubmit)="f.form.valid ? saveCar() : showErrorMessages()">
+    <form #f="ngForm" (ngSubmit)="f.form.valid ? saveCar() : setError()">
         <label for="plate" class="form-label">Car Plate:</label>
         <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="carModel.plate" required>
 

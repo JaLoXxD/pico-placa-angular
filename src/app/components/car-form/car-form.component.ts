@@ -20,7 +20,7 @@ export class CarFormComponent {
   modalTitle: String | null = null;
 
   constructor(private _picoPlacaService: PicoPlacaService) {
-    this.initModel();
+    this._initModel();
   }
 
   saveCar() {
@@ -28,7 +28,7 @@ export class CarFormComponent {
       next: (resp) => {
         this.icon = constants.MODAL.ICONS.SUCCESS
         this.modalTitle = resp.message;
-        this.initModel();
+        this._initModel();
       },
       error: (err) => {
         const { error } = err;
@@ -42,11 +42,11 @@ export class CarFormComponent {
     })
   }
 
-  showErrorMessages() {
+  setError() {
     this.isError = true;
   }
 
-  initModel() {
+  private _initModel() {
     this.carModel = {
       plate: "",
       color: "",
