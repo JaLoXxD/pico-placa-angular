@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ImageAsset } from '../../models/imageAsset';
+import { ImageAsset } from "src/app/models";
 
 @Component({
   selector: 'app-custom-modal',
