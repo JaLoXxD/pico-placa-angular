@@ -1,0 +1,61 @@
+{
+    "lang":{
+        "es":"Español",
+        "en":"Ingles"
+    },
+    "menu":{
+        "circulation":"Revisar Circulación",
+        "addCar":"Añadir Carro"
+    },
+    "buttons":{
+        "check":"Revisar",
+        "save":"Guardar"
+    },
+    "titles":{
+        "carInfo":"Información del Carro",
+        "userInfo":"Información del Dueño"
+    },
+    "carInfo":{
+        "selectedCar":"Carro Seleccionado",
+        "plate":"Placa",
+        "color":"Color",
+        "chasis":"Chasis",
+        "carModel":"Modelo",
+        "year":"Año"
+    },
+    "userInfo":{
+        "name":"Nombre",
+        "email":"Email",
+        "phone":"Número de Teléfono"
+    },
+    "circulation":{
+        "table":{
+            "day":"Día",
+            "info":"Vehículos que no pueden circular"
+        },
+        "schedule": {
+            "title": "Horario de Circulación",
+            "morning":"Mañana",
+            "afternoon":"Tarde",
+            "hours":"Desde {{from}} hasta {{to}}"
+        },
+        "car": {
+            "success":"El carro puede circular",
+            "error":"El carro no puede circular, ten cuidado con los policias"
+        },
+        "calendar": "Calendario de Circulación",
+        "title": "Placas terminadas en",
+        "numbers":"{{firstNum}} y {{lastNum}}",
+        "free":"Todos"
+    },
+    "days":{
+        "sunday": "Domingo",
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "weekends": "Fines de Semana"
+    }
+}

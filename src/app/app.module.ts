@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,28 +15,55 @@ import { CirculationFormComponent } from './components/circulation-form/circulat
 import { CreateCarComponent } from './views/create-car/create-car.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CirculationComponent } from './views/circulation/circulation.component';
+import { SelectedItemComponent } from './shared/selected-item/selected-item.component';
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { CustomSliderComponent } from './shared/custom-slider/custom-slider.component';
+import { ChangeSlideDirective } from './shared/custom-slider/change-slide.directive';
+import { CirculationCardComponent } from './components/circulation-card/circulation-card.component';
+import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
+import { LangSelectorComponent } from './components/lang-selector/lang-selector.component';
+import { DropdownDirective } from "./shared/directives/dropdown.directive";
+
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CarFormComponent,
-    PicoPlacaTableComponent,
-    CustomH1Component,
-    CustomModalComponent,
-    CloseModalDirective,
-    CarsTableComponent,
-    CirculationFormComponent,
-    CreateCarComponent,
-    NavbarComponent,
-    CirculationComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CarFormComponent,
+        PicoPlacaTableComponent,
+        CustomH1Component,
+        CustomModalComponent,
+        CloseModalDirective,
+        CarsTableComponent,
+        CirculationFormComponent,
+        CreateCarComponent,
+        NavbarComponent,
+        CirculationComponent,
+        SelectedItemComponent,
+        CustomSliderComponent,
+        ChangeSlideDirective,
+        CirculationCardComponent,
+        ScheduleCardComponent,
+        LangSelectorComponent,
+        DropdownDirective,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,63 +1,66 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import { PicoPlacaService } from '../../services/pico-placa.service';
-import { CarModel } from '../../models/car';
+import { SaveCarRequest } from "src/app/models";
+import { UserModel } from "src/app/models/user";
+import { NotifierService, PicoPlacaService } from "src/app/services";
 import { constants } from '../../constants';
-import { ImageAsset } from '../../models/imageAsset';
+import { CarModel } from '../../models/car';
 
 @Component({
-  selector: 'app-car-form',
-  templateUrl: './car-form.component.html',
-  styleUrls: ['./car-form.component.sass']
+    selector: 'app-car-form',
+    templateUrl: './car-form.component.html',
+    styleUrls: ['./car-form.component.sass']
 })
 export class CarFormComponent {
-  @ViewChild("f", { static: true }) form: NgForm;
+    @ViewChild("f", { static: true }) form: NgForm;
 
-  carModel: CarModel;
-  isError: Boolean = false;
-  icon: ImageAsset | null = constants.MODAL.ICONS.SUCCESS;
-  showModal: Boolean = false;
-  modalTitle: String | null = null;
+    carModel: CarModel;
+    userModel: UserModel;
+    saveCarRequest: SaveCarRequest;
+    isError: Boolean = false;
 
-  constructor(private _picoPlacaService: PicoPlacaService) {
-    this._initModel();
-  }
-
-  saveCar() {
-    this._picoPlacaService.createCar(this.carModel).subscribe({
-      next: (resp) => {
-        this.icon = constants.MODAL.ICONS.SUCCESS
-        this.modalTitle = resp.message;
-        this._initModel();
-      },
-      error: (err) => {
-        const { error } = err;
-        this.icon = constants.MODAL.ICONS.ERROR
-        this.modalTitle = error.message;
-        this.showModal = true;
-      },
-      complete: () => {
-        this.showModal = true;
-      }
-    })
-  }
-
-  setError() {
-    this.isError = true;
-  }
-
-  private _initModel() {
-    this.carModel = {
-      plate: "",
-      color: "",
-      carModel: "",
-      chasis: "",
-      year: 0,
+    constructor(private _picoPlacaService: PicoPlacaService, private _notifierService: NotifierService) {
+        this._initModels();
     }
-  }
 
-  toggleModal(show: Boolean) {
-    this.showModal = show;
-  }
+    saveCar() {
+        this._buildRequest();
+        this._picoPlacaService.createCar(this.saveCarRequest).subscribe({
+            next: (resp) => {
+                this._notifierService.showModal(resp.message, constants.MODAL.ICONS.SUCCESS);
+                this._initModels();
+            },
+            error: (err) => {
+                const { error } = err;
+                this._notifierService.showModal(error.message, constants.MODAL.ICONS.ERROR);
+            },
+        })
+    }
 
+    setError() {
+        this.isError = true;
+    }
+
+    private _initModels() {
+        this.carModel = {
+            plate: "",
+            color: "#ffffff",
+            carModel: "",
+            chasis: "",
+            year: 0,
+        }
+
+        this.userModel = {
+            name: "",
+            email: "",
+            phoneNumber: "",
+        }
+    }
+
+    private _buildRequest() {
+        this.saveCarRequest = {
+            carInfo: this.carModel,
+            userInfo: this.userModel,
+        }
+    }
 }

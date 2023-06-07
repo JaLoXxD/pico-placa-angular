@@ -1,13 +1,13 @@
 import { CarModel } from "./car";
 
 export interface CheckCirculationModel {
-    plate: String;
+    plate: string;
     date: Date | null;
 }
 
 export interface CheckCirculationResponseModel {
     success: Boolean;
-    message: String;
+    message: string;
     car: CarModel | null;
     allowed: Boolean;
     info: infoModel;

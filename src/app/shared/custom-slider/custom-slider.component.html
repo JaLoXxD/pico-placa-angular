@@ -1,0 +1,11 @@
+<div class="stepsCont" [appChangeSlide]="totalSteps" (currentStep)="getCurrentStep($event)">
+    <div class="leftArrow" *ngIf="currentStep != 0">
+        <i class="fa-solid fa-angle-left"></i>
+    </div>
+    <div id="stepsSlider">
+        <ng-content></ng-content>
+    </div>
+    <div class="rightArrow" *ngIf="currentStep + 1 != totalSteps">
+        <i class="fa-solid fa-angle-right"></i>
+    </div>
+</div>

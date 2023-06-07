@@ -1,0 +1,8 @@
+<div class="custom-card">
+    <h5>{{ plate.LABEL | translate }}</h5>
+    <!-- <h5 class="title">{{'circulation.title' | translate}}</h5> -->
+    <p *ngIf="plate.FIRST; else elseBlock">{{'circulation.numbers' | translate : { firstNum: plate.FIRST, lastNum: plate.LAST } }}</p>
+    <ng-template #elseBlock>
+        <p class="free-circulation">{{ 'circulation.free' | translate }}</p>
+    </ng-template>
+</div>

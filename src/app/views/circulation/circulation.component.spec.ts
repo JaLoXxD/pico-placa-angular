@@ -3,19 +3,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CirculationComponent } from './circulation.component';
 
 describe('CirculationComponent', () => {
-  let component: CirculationComponent;
-  let fixture: ComponentFixture<CirculationComponent>;
+    let component: CirculationComponent;
+    let fixture: ComponentFixture<CirculationComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [CirculationComponent]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [CirculationComponent]
+        });
+        fixture = TestBed.createComponent(CirculationComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(CirculationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

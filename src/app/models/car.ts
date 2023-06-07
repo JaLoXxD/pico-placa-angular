@@ -1,4 +1,5 @@
 export interface CarModel {
+    [key: string]: any;
     id?: String;
     plate: String;
     color: String;

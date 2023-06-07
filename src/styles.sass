@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+body
+    font-family: 'Poppins', sans-serif !important
+.stepsCont
+    width: 70%
+    margin: auto
+    position: relative
+    background-color: #fff
+    border-radius: 30px
+    background-repeat: no-repeat
+    background-size: 100%
+    background-position: center
+    overflow: hidden
+    justify-content: center
+    padding: 40px 0
+    display: flex
+    align-items: center
+    .leftArrow, .rightArrow
+        font-size: 80px
+        top: 40%
+        transition: all 0.5s ease
+        transform-origin: center
+        z-index: 100
+        &:hover
+            transform: scale(1.4)
+            cursor: pointer
+    .leftArrow 
+        left: 20px
+    .rightArrow 
+        right: 20px
+
+#stepsSlider
+    display: flex
+    align-items: center
+    counter-reset: item
+    scroll-behavior: smooth
+    scroll-snap-type: x mandatory
+    transition: all 0.3s ease
+    width: 100%
+
+.step
+    width: 100% !important
+    transform: translateX(0%)
+    position: relative
+    flex: 0 0 100% !important
+    padding: 0 60px
+    counter-increment: item
+
+.imgCont
+    position: relative
+    img
+            width: 50%
+            border-radius: 25px
+            height: 500px
+            object-fit: cover
+            object-position: center

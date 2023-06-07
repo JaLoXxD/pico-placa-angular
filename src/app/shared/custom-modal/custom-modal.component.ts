@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ImageAsset } from "src/app/models";
+import { NotifierService } from "src/app/services";
 
 @Component({
   selector: 'app-custom-modal',
@@ -7,15 +8,15 @@ import { ImageAsset } from "src/app/models";
   styleUrls: ['./custom-modal.component.sass']
 })
 export class CustomModalComponent {
-  @Input() title: String | null = 'null';
+  @Input() title: string | null = 'null';
   @Input() icon: ImageAsset | null = null;
   @Input() showModal: Boolean = false;
 
-  @Output() toogleModalParent = new EventEmitter<Boolean>();
+  constructor(private _notifierService: NotifierService) {}
 
   toggleModal(show: Boolean){
     this.showModal = show;
-    this.toogleModalParent.emit(show);
+    this._notifierService.visible = show;
   }
 
 }

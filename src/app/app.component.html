@@ -1,7 +1,9 @@
 <div class="container py-3">
-  <div class="row mt-4">
-    <app-custom-h1 title="Pico y placa" [centered]="true"></app-custom-h1>
-    <app-navbar></app-navbar>
-    <router-outlet></router-outlet>
-  </div>
+    <div class="row mt-4">
+        <app-custom-h1 title="Pico y placa" [centered]="true"></app-custom-h1>
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+    </div>
+    <app-lang-selector></app-lang-selector>
+    <app-custom-modal [title]="title" [icon]="icon" [showModal]="visible"></app-custom-modal>
 </div>

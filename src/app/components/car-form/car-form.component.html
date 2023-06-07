@@ -1,21 +1,56 @@
-<div class="p-5">
-    <form #f="ngForm" (ngSubmit)="f.form.valid ? saveCar() : setError()">
-        <label for="plate" class="form-label">Car Plate:</label>
-        <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="carModel.plate" required>
-
-        <label for="color" class="form-label">Color:</label>
-        <input id="color" name="color" type="text" class="form-control" [(ngModel)]="carModel.color" required>
-
-        <label for="model" class="form-label">Model:</label>
-        <input id="model" name="model" type="text" class="form-control" [(ngModel)]="carModel.carModel" required>
-
-        <label for="chasis" class="form-label">Chasis:</label>
-        <input id="chasis" name="chasis" type="text" class="form-control" [(ngModel)]="carModel.chasis" required>
-
-        <label for="year" class="form-label">Year:</label>
-        <input id="year" name="year" type="number" class="form-control" [(ngModel)]="carModel.year" required>
+<form #f="ngForm" (ngSubmit)="f.form.valid ? saveCar() : setError()">
+    <div class="step">
+        <h2 class="my-2">{{'titles.carInfo' | translate}}</h2>
+        <div class="row my-2">
+            <div class="col-6">
+                <label for="plate" class="form-label">{{'carInfo.plate' | translate}}:</label>
+                <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="carModel.plate" pattern="^[A-Z]{3}-\d{3,4}?$" required>
+            </div>
+            <div class="col-6">
+                <label for="model" class="form-label">{{'carInfo.carModel' | translate}}:</label>
+                <input id="model" name="model" type="text" class="form-control" [(ngModel)]="carModel.carModel"
+                    required>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6">
+                <label for="chasis" class="form-label">{{'carInfo.chasis' | translate}}:</label>
+                <input id="chasis" name="chasis" type="text" class="form-control" [(ngModel)]="carModel.chasis"
+                    required>
+            </div>
+            <div class="col-6">
+                <label for="year" class="form-label">{{'carInfo.year' | translate}}:</label>
+                <input id="year" name="year" type="number" class="form-control" [(ngModel)]="carModel.year" required>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6">
+                <label for="color" class="form-label">{{'carInfo.color' | translate}}:</label>
+                <input id="color" name ="color" type="color" class="form-control form-control-color" title="Choose your color" [(ngModel)]="carModel.color" required>
+            </div>
+        </div>
+    </div>
+    <div class="step">
+        <h2 class="my-2">{{'titles.userInfo' | translate}}</h2>
+        <div class="row">
+            <div class="col-6">
+                <label for="name" class="form-label">{{'userInfo.name' | translate}}:</label>
+                <input id="name" name="name" type="text" class="form-control" [(ngModel)]="userModel.name" required>
+            </div>
+            <div class="col-6">
+                <label for="email" class="form-label">{{'userInfo.email' | translate}}:</label>
+                <input id="email" name="email" type="email" class="form-control" [(ngModel)]="userModel.email" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="phone" class="form-label">{{'userInfo.phone' | translate}}:</label>
+                <input id="phone" name="phone" type="text" class="form-control" [(ngModel)]="userModel.phoneNumber" required>
+            </div>
+        </div>
 
         <button type="submit" class="btn btn-dark mt-4" [disabled]="!f.form.valid">Create</button>
-    </form>
-    <app-custom-modal [title]="modalTitle" [icon]="icon" (toogleModalParent)="toggleModal($event)" [showModal]="showModal"></app-custom-modal>
-</div>
+    </div>
+</form>
+    <!-- <app-custom-modal [title]="modalTitle" [icon]="icon" (toogleModalParent)="toggleModal($event)"
+        [showModal]="showModal"></app-custom-modal> -->
