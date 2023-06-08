@@ -18,6 +18,7 @@ export class CarFormComponent {
     userModel: UserModel;
     saveCarRequest: SaveCarRequest;
     isError: Boolean = false;
+    appConstants: typeof constants = constants;
 
     constructor(private _picoPlacaService: PicoPlacaService, private _notifierService: NotifierService) {
         this._initModels();
@@ -27,12 +28,13 @@ export class CarFormComponent {
         this._buildRequest();
         this._picoPlacaService.createCar(this.saveCarRequest).subscribe({
             next: (resp) => {
-                this._notifierService.showModal(resp.message, constants.MODAL.ICONS.SUCCESS);
+                this._notifierService.showModal(resp.message, this.appConstants.MODAL.ICONS.SUCCESS);
                 this._initModels();
             },
             error: (err) => {
                 const { error } = err;
-                this._notifierService.showModal(error.message, constants.MODAL.ICONS.ERROR);
+                this._notifierService.showModal(error.message, this.appConstants.MODAL.ICONS.ERROR);
+                debugger;
             },
         })
     }

@@ -12,6 +12,8 @@ export class CirculationFormComponent {
     @Input() currentCar: CarModel | null = null;
     checkCirculationModel: CheckCirculationModel;
     isError: Boolean = false;
+    isValidPlate: Boolean = true;
+    appConstants: typeof constants = constants;
 
     constructor(private _picoPlacaService: PicoPlacaService, private _notifierService: NotifierService) { }
 
@@ -31,12 +33,12 @@ export class CirculationFormComponent {
         this._picoPlacaService.checkCirculation(this.checkCirculationModel).subscribe({
             next: (resp) => {
                 console.log(resp)
-                this._notifierService.showModal(resp.message, constants.MODAL.ICONS.SUCCESS);
+                this._notifierService.showModal(resp.message, this.appConstants.MODAL.ICONS.SUCCESS);
                 this._initModel();
             },
             error: (err) => {
                 const { error } = err;
-                this._notifierService.showModal(error.message, constants.MODAL.ICONS.ERROR);
+                this._notifierService.showModal(error.message, this.appConstants.MODAL.ICONS.ERROR);
             }
         });
     }
@@ -50,5 +52,9 @@ export class CirculationFormComponent {
             plate: "",
             date: null,
         }
+    }
+
+    checkPlate() {
+        this.isValidPlate = this._picoPlacaService.isValidPlate(this.checkCirculationModel.plate);
     }
 }

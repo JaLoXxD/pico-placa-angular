@@ -4,7 +4,7 @@
         <div class="row my-2">
             <div class="col-6">
                 <label for="plate" class="form-label">{{'carInfo.plate' | translate}}:</label>
-                <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="carModel.plate" pattern="^[A-Z]{3}-\d{3,4}?$" required>
+                <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="carModel.plate" [pattern]="appConstants.REGEX.PLATE" required>
             </div>
             <div class="col-6">
                 <label for="model" class="form-label">{{'carInfo.carModel' | translate}}:</label>

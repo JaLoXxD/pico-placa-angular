@@ -1,4 +1,7 @@
 export const constants = {
+    REGEX: {
+        PLATE: /^[A-Z]{3}-\d{3,4}?$/,
+    },
     MODAL: {
         ICONS: {
             SUCCESS: {
