@@ -57,5 +57,9 @@
         "friday": "Friday",
         "saturday": "Saturday",
         "weekends": "Weekends"
+    },
+    "errors":{
+        "carValidationFailed":"The car plate already exists",
+        "duplicatedEmail":"The email already exists"
     }
 }

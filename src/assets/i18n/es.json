@@ -57,5 +57,9 @@
         "friday": "Viernes",
         "saturday": "Sábado",
         "weekends": "Fines de Semana"
+    },
+    "errors":{
+        "carValidationFailed":"La placa ya está registrada",
+        "duplicatedEmail":"El email ya está registrado"
     }
 }
