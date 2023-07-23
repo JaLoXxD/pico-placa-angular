@@ -1,6 +1,6 @@
 export const constants = {
     REGEX: {
-        PLATE: /^[A-Z]{3}-\d{3,4}?$/,
+        PLATE: /^([A-Za-z]{3})-?(\d{3,4})$/,
     },
     MODAL: {
         ICONS: {
