@@ -24,6 +24,7 @@ import { CirculationCardComponent } from './components/circulation-card/circulat
 import { ScheduleCardComponent } from './components/schedule-card/schedule-card.component';
 import { LangSelectorComponent } from './components/lang-selector/lang-selector.component';
 import { DropdownDirective } from "./shared/directives/dropdown.directive";
+import { CustomPaginatorComponent } from './shared/custom-paginator/custom-paginator.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -49,6 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ScheduleCardComponent,
         LangSelectorComponent,
         DropdownDirective,
+        CustomPaginatorComponent,
     ],
     imports: [
         BrowserModule,
