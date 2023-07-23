@@ -1,3 +1,4 @@
+export * from "./general"
 export * from "./car"
 export * from "./saveCar"
 export * from "./checkCirculation"
