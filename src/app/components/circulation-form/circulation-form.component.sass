@@ -1,0 +1,61 @@
+@import '../../variables.sass'
+
+$headerHeight: 35px
+
+
+.plate-container
+  width: 510px
+  margin: 20px auto
+  border: 5px solid $darkGray
+  border-radius: 15px
+  outline: none
+  overflow: hidden
+  position: relative
+  background-color: $lightText
+
+  .plate-header
+    text-align: center
+    width: 100%
+    height: $headerHeight
+    position: absolute
+    top: 0
+    background-color: $principalColor
+    display: flex
+    align-items: center
+    justify-content: center
+    h4
+      margin: 0 10px
+      color: $lightText
+
+  .licenseplate
+    color: $darkGray
+    background-color: $lightText
+    background-repeat: no-repeat
+    font-family: 'Segoe UI', Arial, sans-serif
+    font-size: 90px
+    line-height: 110px
+    font-weight: bold
+    text-transform: uppercase
+    text-align: center
+    width: 510px
+    border: 0
+    margin: $headerHeight 0 18px 0
+  
+  .invalid-msg
+    position: absolute
+    bottom: 0
+    width: 100%
+    margin: auto
+    text-align: center
+    background-color: $warningBackground
+
+  &::placeholder
+    color: $placeholderColor
+
+@media (min-width: 1000px) and (max-width: 1150px)
+  .plate-container
+    width: 400px
+    .licenseplate
+      width: 400px
+      font-size: 70px
+      line-height: 80px

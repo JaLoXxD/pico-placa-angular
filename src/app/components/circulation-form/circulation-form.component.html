@@ -1,9 +1,13 @@
 <div>
-    <form #f="ngForm" (ngSubmit)="f.form.valid ? checkCirculation() : setError()">
-        <label for="plate" class="form-label">{{'carInfo.plate' | translate}}:</label>
-        <input id="plate" name="plate" type="text" class="form-control" [(ngModel)]="checkCirculationModel.plate" [pattern]="appConstants.REGEX.PLATE" (blur)="checkPlate()" required>
-        <p *ngIf="!isValidPlate">Invalid Plate</p>
+  <form #f="ngForm" (ngSubmit)="f.form.valid ? checkCirculation() : setError()">
+    <div class="plate-container">
+      <div class="plate-header">
+        <h4>{{"country.ec" | translate}}</h4>
+      </div>
+      <input #input id="plate" name="plate" type="text" (click)="resetPlateValidator()" (ngModelChange)="formatCarPlate($event, input)" [(ngModel)]="checkCirculationModel.plate" class="licenseplate" maxlength="8" placeholder="PDN-6906" (blur)="checkPlate()" required />
+      <p class="invalid-msg" *ngIf="!isValidPlate">{{"errors.invalidPlate" | translate}}</p>
+    </div>
 
-        <button type="submit" class="btn btn-dark mt-4" [disabled]="!f.form.valid">{{'buttons.check' | translate}}</button>
-    </form>
+    <button type="submit" class="btn btn-dark m-auto d-block" [disabled]="!f.form.valid">{{'buttons.check' | translate}}</button>
+  </form>
 </div>
