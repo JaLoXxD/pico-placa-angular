@@ -2,6 +2,29 @@
 h3
     color: $secondaryColor
     font-weight: 900
+
 .circulation-cards
     gap: 20px
     flex-wrap: wrap
+
+.form-row
+  display: flex
+  flex-wrap: wrap-reverse
+  justify-content: space-between
+  .table, .check-form
+    width: 48%  
+
+.schedule-container
+  gap: 20px
+
+@media (max-width: 1200px)
+  .schedule-container
+    gap: 0
+
+@media (max-width: 1000px)
+  .form-row
+    .table, .check-form
+      width: 100%
+  
+  .schedule-container
+    gap: 20px

@@ -1,26 +1,25 @@
 <div class="row my-3">
-    <div class="col-6">
-        <h3 class="text-center">{{'circulation.calendar' | translate}}</h3>
-        <div class="circulation-cards my-4 d-flex gap-5 justify-content-center">
-            <app-circulation-card *ngFor="let plate of appConstants.PLATES" [plate]="plate"></app-circulation-card>
-        </div>
+  <div class="col-12">
+    <h3 class="text-center">{{'circulation.calendar' | translate}}</h3>
+    <div class="circulation-cards my-4 d-flex gap-5 justify-content-center">
+      <app-circulation-card *ngFor="let plate of appConstants.PLATES" [plate]="plate"></app-circulation-card>
     </div>
-    <div class="col-6 d-flex flex-column align-items-center">
-        <h3 class="text-center m-0">{{ 'circulation.schedule.title' | translate }}</h3>
-        <div class="d-flex gap-5 justify-content-center m-auto flex-wrap">
-            <app-schedule-card *ngFor="let schedule of appConstants.SCHEDULES"
-                [schedule]="schedule"></app-schedule-card>
-        </div>
-    </div>
+  </div>
 </div>
-<div class="row">
-    <div class="col-6">
-        <app-cars-table (onSelectCar)="setCar($event)"></app-cars-table>
+<div class="form-row">
+  <div class="table">
+    <app-cars-table (onSelectCar)="setCar($event)"></app-cars-table>
+  </div>
+  <div class="check-form">
+    <div class="d-flex flex-column align-items-center">
+      <h3 class="text-center m-0">{{ 'circulation.schedule.title' | translate }}</h3>
+      <div class="d-flex justify-content-center m-auto flex-wrap schedule-container">
+        <app-schedule-card *ngFor="let schedule of appConstants.SCHEDULES" [schedule]="schedule"></app-schedule-card>
+      </div>
     </div>
-    <div class="col-6">
-        <!-- <app-car-form></app-car-form> -->
-        <app-selected-item *ngIf="currentCar" [title]="'carInfo.selectedCar' | translate" [items]="items"
-            ngClass="d-block mb-3"></app-selected-item>
-        <app-circulation-form [currentCar]="currentCar"></app-circulation-form>
-    </div>
+    <h3 class="text-center mt-3">{{"titles.checkCirculation" | translate}}</h3>
+    <app-circulation-form [currentCar]="currentCar" (onChangeCar)="resetCar($event)"></app-circulation-form>
+    <app-selected-item *ngIf="currentCar" [title]="'carInfo.selectedCar' | translate" [items]="items"
+      ngClass="d-block mt-3"></app-selected-item>
+  </div>
 </div>

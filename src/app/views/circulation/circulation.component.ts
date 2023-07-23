@@ -22,4 +22,8 @@ export class CirculationComponent {
             }
         }).filter(item => item.label !== "carInfo._id" && item.label !== "carInfo.user");
     }
+
+    resetCar(car: CarModel | null) {
+      this.currentCar = car;
+    }
 }
