@@ -1,65 +1,73 @@
 {
-    "lang": {
-        "es": "Spanish",
-        "en": "English"
+  "general": {
+    "search": "Search"
+  },
+  "lang": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "country": {
+    "ec": "Ecuador"
+  },
+  "menu": {
+    "circulation": "Check Circulation",
+    "addCar": "Add Car"
+  },
+  "buttons": {
+    "check": "Check",
+    "save": "Save"
+  },
+  "titles": {
+    "carInfo": "Car Information",
+    "userInfo": "Owner Information",
+    "checkCirculation": "Check Circulation With Car Plate"
+  },
+  "carInfo": {
+    "selectedCar": "Selected Car",
+    "plate": "Plate",
+    "color": "Color",
+    "chasis": "Chasis",
+    "carModel": "Model",
+    "year": "Year"
+  },
+  "userInfo": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number"
+  },
+  "circulation": {
+    "table": {
+      "day": "Day",
+      "info": "Car Plates that cannot circulate"
     },
-    "menu": {
-        "circulation": "Check Circulation",
-        "addCar": "Add Car"
+    "schedule": {
+      "title": "Circulation Hours",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "hours": "From {{from}} to {{to}}"
     },
-    "buttons": {
-        "check": "Check",
-        "save": "Save"
+    "car": {
+      "success": "The car can circulate",
+      "error": "The car can't circulate, be carefull with the cops"
     },
-    "titles": {
-        "carInfo": "Car Information",
-        "userInfo": "Owner Information"
-    },
-    "carInfo": {
-        "selectedCar": "Selected Car",
-        "plate": "Plate",
-        "color": "Color",
-        "chasis": "Chasis",
-        "carModel": "Model",
-        "year": "Year"
-    },
-    "userInfo": {
-        "name": "Name",
-        "email": "Email",
-        "phone": "Phone Number"
-    },
-    "circulation": {
-        "table": {
-            "day": "Day",
-            "info": "Car Plates that cannot circulate"
-        },
-        "schedule": {
-            "title": "Circulation Hours",
-            "morning": "Morning",
-            "afternoon": "Afternoon",
-            "hours": "From {{from}} to {{to}}"
-        },
-        "car": {
-            "success":"The car can circulate",
-            "error":"The car can't circulate, be carefull with the cops"
-        },
-        "calendar": "Circulation Calendar",
-        "title": "Car Plates ending in",
-        "numbers": "{{firstNum}} and {{lastNum}}",
-        "free": "All"
-    },
-    "days": {
-        "sunday": "Sunday",
-        "monday": "Monday",
-        "tuesday": "Tuesday",
-        "wednesday": "Wednesday",
-        "thursday": "Thursday",
-        "friday": "Friday",
-        "saturday": "Saturday",
-        "weekends": "Weekends"
-    },
-    "errors":{
-        "carValidationFailed":"The car plate already exists",
-        "duplicatedEmail":"The email already exists"
-    }
+    "calendar": "Circulation Calendar",
+    "title": "Car Plates ending in",
+    "numbers": "{{firstNum}} and {{lastNum}}",
+    "free": "All"
+  },
+  "days": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "weekends": "Weekends"
+  },
+  "errors": {
+    "carValidationFailed": "The car plate already exists",
+    "duplicatedEmail": "The email already exists",
+    "invalidPlate": "The plate is invalid"
+  }
 }
