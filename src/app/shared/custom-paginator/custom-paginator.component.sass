@@ -1,0 +1,21 @@
+@import "../../variables.sass"
+
+.custom-paginator
+  display: flex
+  gap: 20px
+  justify-content: center
+  .page-btn
+    width: 40px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    background-color: $secondaryColor
+    color: $lightText
+    transition: all .3s ease-in-out
+    cursor: pointer
+    &:hover
+      background-color: $greenHover
+  .active-page
+    background-color: $greenHover

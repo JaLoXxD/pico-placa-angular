@@ -1,0 +1,3 @@
+<div class="custom-paginator" *ngIf="paginator">
+  <div class="page-btn" *ngFor="let page of generatePagesArray()" (click)="changePage(page)" [ngClass]="{ 'active-page': paginator.page === page }">{{page}}</div>
+</div>
