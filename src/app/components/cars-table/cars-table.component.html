@@ -1,22 +1,27 @@
 <div>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th scope="col">{{'carInfo.plate' | translate}}</th>
-                <th scope="col">{{'carInfo.year' | translate}}</th>
-                <th scope="col">{{'carInfo.color' | translate}}</th>
-                <th scope="col">{{'carInfo.carModel' | translate}}</th>
-                <th scope="col">{{'carInfo.chasis' | translate}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let car of cars" (click)="setCar(car)">
-                <td>{{car.plate}}</td>
-                <td>{{car.year}}</td>
-                <td><div class="color" [style.backgroundColor]="car.color"></div></td>
-                <td>{{car.carModel}}</td>
-                <td>{{car.chasis}}</td>
-            </tr>
-        </tbody>
-    </table>
+  <div class="filter">
+    <input type="text" [placeholder]="'general.search' | translate" [(ngModel)]="carFilter">
+    <button (click)="fillTable(1)"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">{{'carInfo.plate' | translate}}</th>
+        <th scope="col">{{'carInfo.year' | translate}}</th>
+        <th scope="col">{{'carInfo.color' | translate}}</th>
+        <th scope="col">{{'carInfo.carModel' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars" (click)="setCar(car)">
+        <td>{{car.plate}}</td>
+        <td>{{car.year}}</td>
+        <td>
+          <div class="color" [style.backgroundColor]="car.color"></div>
+        </td>
+        <td>{{car.carModel}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-custom-paginator [paginator]="paginator" (onPageChange)="fillTable($event)"></app-custom-paginator>
 </div>

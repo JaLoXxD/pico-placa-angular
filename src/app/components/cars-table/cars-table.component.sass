@@ -1,13 +1,29 @@
 @import "../../variables.sass"
-thead tr 
-    background-color: $secondaryColor !important
-    color: $lightText
-thead 
-    cursor: default
+thead tr
+  background-color: $secondaryColor !important
+  color: $lightText
+thead
+  cursor: default
 tbody tr
-    cursor: pointer
+  cursor: pointer
 
 .color
-    width: 20px
-    height: 20px
-    border-radius: 50%
+  width: 20px
+  height: 20px
+  border-radius: 50%
+
+input
+  border-radius: 5px 0 0 5px
+  outline: none
+  border: 3px solid $darkGray
+  border-right: 0
+
+button
+  border-radius: 0 5px 5px 0
+  border: 3px solid $darkGray
+  border-left: 0
+  background-color: $principalColor
+  color: $lightText
+
+.filter
+  font-size: $normalFontSize
